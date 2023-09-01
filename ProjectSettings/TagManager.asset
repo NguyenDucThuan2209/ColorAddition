@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Sphere
+  - Bottom
+  - Top
   layers:
   - Default
   - TransparentFX

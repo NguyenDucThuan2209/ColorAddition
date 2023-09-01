@@ -49,6 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_number: 16
+  m_color: {r: 1, g: 1, b: 1, a: 1}
   m_aim: {fileID: 5661386777814917040}
   m_rigidbody: {fileID: 5504303357890934864}
   m_collider: {fileID: 5504303357890934879}

@@ -13,6 +13,7 @@ public class IngameScreen : UIScreen
     }
     public void OnPauseButtonPressed()
     {
-
+        SoundManager.Instance.PlaySound("Click");
+        MenuManager.Instance.PauseGame();
     }
 }
