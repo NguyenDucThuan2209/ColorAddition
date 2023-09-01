@@ -1,0 +1,26 @@
+fileFormatVersion: 2
+guid: 865c58c6b6b2a574db5ade5936d1c4a8
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Sacco
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: f25cdc78709945344b747ef5c2c419be, type: 3}
+  - {fileID: 12800000, guid: a3b88887f8e9e1a45a603a0592dd2cb8, type: 3}
+  - {fileID: 12800000, guid: 5beb4bc5b4d743f44948d6eab6d0637d, type: 3}
+  - {fileID: 12800000, guid: b4c585fe541c3674cbabb51b815237ea, type: 3}
+  - {fileID: 12800000, guid: 1a9b0bd0664499144997c8d07bf92ecb, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
