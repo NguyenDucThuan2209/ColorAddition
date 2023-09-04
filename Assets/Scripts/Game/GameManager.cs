@@ -82,7 +82,7 @@ public class GameManager : MonoBehaviour
             else if (Input.GetMouseButton(0) && m_isAiming)
             {
                 var newX = Camera.main.ScreenToWorldPoint(Input.mousePosition).x;
-                var radius = m_currentSphere.Collider.radius + 0.01f;
+                var radius = m_currentSphere.Collider.radius / 2 + 0.01f;
                 var deltaX = (newX - m_currentX) * m_sensitive;
                 bool isInBound = (m_horizontal.x + radius < m_currentSphere.transform.position.x + deltaX)
                                 && (m_currentSphere.transform.position.x + deltaX < m_horizontal.y - radius);

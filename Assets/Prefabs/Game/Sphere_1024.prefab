@@ -95,8 +95,8 @@ GameObject:
   - component: {fileID: 3648182020471261807}
   - component: {fileID: 3648182020471261800}
   - component: {fileID: 3648182020471261806}
-  - component: {fileID: 3648182020471261805}
   - component: {fileID: 3648182020471261804}
+  - component: {fileID: 1757769016170765824}
   m_Layer: 0
   m_Name: Sphere_1024
   m_TagString: Sphere
@@ -113,8 +113,8 @@ Transform:
   m_GameObject: {fileID: 3648182020471261795}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.68, y: 2.23, z: 0}
-  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 9071363588674978624}
   m_Father: {fileID: 0}
@@ -136,7 +136,7 @@ MonoBehaviour:
   m_color: {r: 0, g: 1, b: 0, a: 1}
   m_aim: {fileID: 2952577517721259711}
   m_rigidbody: {fileID: 3648182020471261804}
-  m_collider: {fileID: 3648182020471261805}
+  m_collider: {fileID: 1757769016170765824}
 --- !u!212 &3648182020471261806
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -189,22 +189,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &3648182020471261805
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3648182020471261795}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 6200000, guid: 2a7cc8887fc30474189c016ac2e1a848, type: 2}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.37
 --- !u!50 &3648182020471261804
 Rigidbody2D:
   serializedVersion: 4
@@ -226,3 +210,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!58 &1757769016170765824
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3648182020471261795}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 1.48
