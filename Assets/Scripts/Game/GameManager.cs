@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] float m_sensitive;
     [SerializeField] Vector2 m_vertical;
     [SerializeField] Vector2 m_horizontal;
+    [SerializeField] Vector2 m_levelRange;
     [SerializeField] Transform m_playZone;
     [SerializeField] Transform m_dropPoint;
     [SerializeField] Transform m_sphereHolder;
@@ -34,7 +35,7 @@ public class GameManager : MonoBehaviour
     private int m_highScore = 0;
     private float m_currentX = 0f;
     private float m_timeCount = 0f;
-    private float m_delayAiming = 1f;
+    private float m_delayAiming = 0.25f;
 
     private Sphere m_currentSphere;
 
@@ -59,7 +60,8 @@ public class GameManager : MonoBehaviour
         {
             if (m_timeCount >= m_delayAiming)
             {
-                int randomIndex = Random.Range(0, m_level);
+                Debug.Log("Spawn sphere");
+                int randomIndex = Random.Range(0, Mathf.Clamp(m_level, (int)m_levelRange.x, (int)m_levelRange.y));
 
                 m_timeCount = 0;
                 m_isReady = true;
@@ -76,6 +78,7 @@ public class GameManager : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0) && !m_isAiming)
             {
+                Debug.Log("Start aim sphere");
                 m_isAiming = true;
                 m_currentX = Camera.main.ScreenToWorldPoint(Input.mousePosition).x;
             }
@@ -95,12 +98,18 @@ public class GameManager : MonoBehaviour
             }
             else if (Input.GetMouseButtonUp(0) && m_isAiming)
             {
+                Debug.Log("Drop sphere");
                 m_currentSphere.Rigidbody.gravityScale = 1;
+                m_currentSphere.Collider.enabled = true;
                 m_currentSphere.Aim.SetActive(false);
                 m_currentSphere = null;
                 m_isAiming = false;
                 m_isReady = false;
             }
+        }
+        else
+        {
+            m_isReady = false;
         }
     }
 
@@ -141,6 +150,7 @@ public class GameManager : MonoBehaviour
             var sphere = Instantiate(m_spherePrefab[index], new Vector2(x, y), Quaternion.identity, m_sphereHolder);
             
             sphere.GetComponent<Sphere>().Ready();
+            sphere.GetComponent<Sphere>().Collider.enabled = true;
         }
     }
 
@@ -202,6 +212,7 @@ public class GameManager : MonoBehaviour
 
         var newSphere = Instantiate(m_spherePrefab[level], centerPos, Quaternion.identity, m_sphereHolder).GetComponent<Sphere>();
         newSphere.Rigidbody.velocity = velocity;
+        newSphere.Collider.enabled = true;
         newSphere.Ready();
 
         var effect = Instantiate(m_mergeEffect, centerPos, Quaternion.identity, m_sphereHolder);
